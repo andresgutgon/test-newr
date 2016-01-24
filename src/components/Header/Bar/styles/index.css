@@ -1,13 +1,28 @@
-.bar {
-  composes: clearfix from  "../../../../components/shared/utils.css";
+@import "../../../../components/shared/variables.css";
+
+:root {
+  --bar-height: 32px;
 }
+
+.bar {}
 
 .name {
   composes: ellipsis from  "../../../../components/shared/utils.css";
-  color: rgba(255, 255, 255, 0.4)
+  color: rgba(255, 255, 255, 0.4);
+  line-height: var(--bar-height);
 }
 
 .button {
   float: right; 
   margin-left: 10px;
+  background-color: var(--app-color-dark);
+  line-height: var(--bar-height);
+  border: 0;
+  border-radius: 2px;
+  color: white;
+  padding: 0 8px;
+
+  &:hover {
+    background-color: var(--app-color-alt);
+  }
 }

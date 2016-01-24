@@ -49,6 +49,7 @@ module.exports = {
   postcss: [
     require('postcss-import')(),
     require('postcss-cssnext')(),
+    require('postcss-nested'),
     require('autoprefixer-core'),
   ],
 

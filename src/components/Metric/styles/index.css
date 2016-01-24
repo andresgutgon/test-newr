@@ -1,0 +1,20 @@
+@import "../../../components/shared/variables.css";
+
+.metric {
+  width: 30%;
+  padding: 1%;
+  background-color: var(--metric-bg);
+  border-radius: 3px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.metas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    font-size: 11px;
+  }
+}
