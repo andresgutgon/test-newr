@@ -38,6 +38,10 @@ module.exports = {
     ]
   },
 
-  postcss: [ require('autoprefixer-core') ],
+  postcss: [
+    require('postcss-import')(),
+    require('postcss-cssnext')(),
+    require('autoprefixer-core'),
+  ],
 
 };

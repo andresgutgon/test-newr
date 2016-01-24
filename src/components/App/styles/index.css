@@ -1,7 +1,6 @@
-.nice {
-  color: pink;
-}
+@import "../../shared/variables.css";
+@import "normalize.css";
 
-.superNice {
-  color: darkred;
+.app {
+  background-color: var(--app-color);
 }
