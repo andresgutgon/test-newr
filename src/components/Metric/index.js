@@ -14,7 +14,7 @@ export default class Metric extends Component {
 
     return (
       <li className={styles.metric}>
-        {metric.name}
+        <h3 className={styles.metricName}>{metric.name}</h3>
         <ul className={styles.metas}>{this.renderMetas()}</ul>
       </li>
     );

@@ -7,6 +7,19 @@
   border-radius: 3px;
   margin-bottom: 10px;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    .metas li {
+      visibility: visible;
+    }
+  }
+}
+
+.metricName {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0 0 10px 0;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .metas {
@@ -16,5 +29,7 @@
 
   li {
     font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    visibility: hidden;
   }
-}
+} 

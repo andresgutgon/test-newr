@@ -12,8 +12,8 @@ const METADATAS = [
 
 const METRICS = [
   {
-    name: 'Metric Name',
-    metadata: METADATAS[0],
+    name: 'Firs metric',
+    metadatas: [METADATAS[0]],
   },
   {
     name: 'Metric Name',
@@ -37,6 +37,8 @@ const METRICS = [
   {
     name: 'Metric Name',
     metadatas: [
+      METADATAS[2],
+      METADATAS[0],
       METADATAS[2],
       METADATAS[0],
     ],

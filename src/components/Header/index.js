@@ -7,7 +7,7 @@ import Bar from './Bar';
 export default class Header extends Component {
   render() {
     return (
-      <div>
+      <div className={styles.header}>
         <div className={styles.logo}>
           <Logo />
         </div>
