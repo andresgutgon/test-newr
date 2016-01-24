@@ -3,6 +3,8 @@
 .metric {
   width: 30%;
   padding: 1%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: var(--metric-bg);
   border-radius: 3px;
   margin-bottom: 10px;
