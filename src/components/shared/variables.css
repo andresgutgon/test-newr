@@ -1,3 +1,8 @@
 :root {
   --app-color: #596177;
 }
+
+@custom-media --screen-xs-min (min-width: 480px);
+@custom-media --screen-sm-min (min-width: 768px);
+@custom-media --screen-md-min (min-width: 992px);
+@custom-media --screen-lg-min (min-width: 1200px);

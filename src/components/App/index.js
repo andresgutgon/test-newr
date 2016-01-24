@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
 import styles from './styles/index.css';
-import Logo from '../Logo';
+import Header from '../Header';
 
 export class App extends Component {
   render() {
     return (
       <div className={styles.app}>
-        <Logo/>
-        App base component
+        <div className={styles.content}>
+          <Header />
+        </div>
       </div>
     );
   }

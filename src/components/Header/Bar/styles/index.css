@@ -1,0 +1,13 @@
+.bar {
+  composes: clearfix from  "../../../../components/shared/utils.css";
+}
+
+.name {
+  composes: ellipsis from  "../../../../components/shared/utils.css";
+  color: rgba(255, 255, 255, 0.4)
+}
+
+.button {
+  float: right; 
+  margin-left: 10px;
+}
