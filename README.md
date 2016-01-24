@@ -1,6 +1,7 @@
 ## What is this?
 Just me playing with React to develop a small metrics UI component. The objective is be able to make the UI and test the resulting code.
 
+![Screenshot](./screenshot.png)
 
 ## Installation
 
