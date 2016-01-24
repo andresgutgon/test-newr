@@ -6,7 +6,7 @@
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
-    "start": "node devServer.js",
+    "start": "NODE_ENV=development node devServer.js",
     "lint": "eslint src"
   },
   "repository": {
@@ -40,12 +40,16 @@
     "eslint": "^1.10.3",
     "eslint-plugin-babel": "^3.0.0",
     "eslint-plugin-react": "^3.11.3",
-    "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
     "rimraf": "^2.4.3",
     "webpack": "^1.12.9",
     "webpack-dev-middleware": "^1.4.0",
-    "webpack-hot-middleware": "^2.6.0"
+    "webpack-hot-middleware": "^2.6.0",
+    "css-loader": "^0.15.1",
+    "extract-text-webpack-plugin": "^0.8.1",
+    "style-loader": "^0.12.3",
+    "postcss-loader": "^0.4.3",
+    "autoprefixer-core": "^5.1.11"
   },
   "dependencies": {
     "react": "^0.14.3",
