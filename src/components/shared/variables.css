@@ -4,6 +4,11 @@
   --app-color-alt: #FF0090;
   --metric-bg: #61697E;
   --metric-bg-light: #6E758A;
+
+  --metric-xs-width: 45%;
+  --metric-xs-padding: 2%;
+  --metric-normal-width: 30%;
+  --metric-normal-padding: 1%;
 }
 
 @custom-media --screen-xs-min (min-width: 480px);

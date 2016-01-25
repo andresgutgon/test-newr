@@ -1,0 +1,60 @@
+@import "../../../components/shared/variables.css";
+
+.buttonWrapper {
+  width: calc(var(--metric-xs-width) + calc(var(--metric-xs-padding) * 2));
+}
+
+.button {
+  background-color: #565E73;
+  border: 1px dashed rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  display: block;
+  width: 100%;
+  min-height: 80px;
+  text-transform: uppercase;
+  font-size: 11px;
+  &:hover {
+    background-color: var(--metric-bg-light);
+  }
+}
+
+.icon,
+.buttonText {
+  display: inline-block;
+  vertical-align: middle;
+  color: white;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.textareaWrapper {
+  padding: 5px 0 0 0;
+  position: relative;
+  background-color: var(--metric-bg-light);
+  border-radius: 3px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+  min-height: 75px;
+
+  textarea {
+    background-color: transparent;
+    border: 0;
+    padding: 0 0 10px 10px; 
+    resize: none;
+    color: rgba(255, 255, 255, 0.6);
+    width: 90%;
+    min-height: 50px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@media (--screen-xs-min) {
+  .buttonWrapper {
+    width: calc(var(--metric-normal-width) + calc(var(--metric-normal-padding) * 2));
+  }
+}

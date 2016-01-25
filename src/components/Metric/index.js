@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import MetricTextarea from '../MetricTextarea';
 import styles from './styles/index.css';
 
 export default class Metric extends Component {
@@ -7,16 +8,33 @@ export default class Metric extends Component {
     const { metric: { metadatas=[]} } = this.props;
 
     return metadatas.map((meta, index) => (<li key={index}>{meta}</li>));
-
   }
-  render() {
+
+  renderInfo() {
     const { metric } = this.props;
 
     return (
-      <li className={styles.metric}>
+      <div>
         <h3 className={styles.metricName}>{metric.name}</h3>
         <ul className={styles.metas}>{this.renderMetas()}</ul>
+      </div>
+    );
+  }
+
+  render() {
+    const { editing } = this.props;
+
+    return (
+      <li className={styles.metric}>
+        {!editing && this.renderInfo()}
+        {editing && <MetricTextarea simple={true}/>}
       </li>
     );
   }
 }
+
+Metric.defaultProps = {
+  editing: false,
+};
+
+export default Metric;

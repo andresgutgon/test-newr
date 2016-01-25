@@ -1,0 +1,27 @@
+@import "../../../components/shared/variables.css";
+
+.textareaWrapper {
+  position: relative;
+  border-radius: 3px;
+  min-height: 75px;
+
+  textarea {
+    background-color: transparent;
+    border: 0;
+    padding: 0 0 10px 10px; 
+    resize: none;
+    color: rgba(255, 255, 255, 0.6);
+    width: 90%;
+    min-height: 50px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.textareaWrapperStyled {
+  padding: 5px 0 0 0;
+  composes: textareaWrapper;
+  background-color: var(--metric-bg-light);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+}

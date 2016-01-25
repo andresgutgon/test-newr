@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import styles from './styles/index.css';
 import Header from '../Header';
 import Metric from '../Metric';
+import MetricButton from '../MetricButton';
 
 const METADATAS = [
   'Monthly resolution',
@@ -75,7 +76,10 @@ export class App extends Component {
       <div className={styles.app}>
         <div className={styles.content}>
           <Header />
-          <ul className={styles.metrics}>{this.renderMetrics()}</ul>
+          <ul className={styles.metrics}>
+            {this.renderMetrics()}
+            <MetricButton />
+          </ul>
         </div>
       </div>
     );
