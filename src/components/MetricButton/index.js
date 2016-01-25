@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import MetricTextarea from '../MetricTextarea';
+
 import styles from './styles/index.css';
 
 class MetricButton extends Component {
@@ -19,14 +20,14 @@ class MetricButton extends Component {
     return (
       <li className={styles.buttonWrapper}>
         {!editing && this.renderButton()}
-        {editing && <MetricTextarea />}
+        {editing && <MetricTextarea showButton={true}/>}
       </li>
     );
   }
 }
 
 MetricButton.defaultProps = {
-  editing: false,
+  editing: true,
 };
 
 export default MetricButton;

@@ -2,6 +2,7 @@
 
 .buttonWrapper {
   width: calc(var(--metric-xs-width) + calc(var(--metric-xs-padding) * 2));
+  position: relative;
 }
 
 .button {
@@ -29,28 +30,6 @@
 .icon {
   margin-right: 10px;
   font-size: 20px;
-}
-
-.textareaWrapper {
-  padding: 5px 0 0 0;
-  position: relative;
-  background-color: var(--metric-bg-light);
-  border-radius: 3px;
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
-  min-height: 75px;
-
-  textarea {
-    background-color: transparent;
-    border: 0;
-    padding: 0 0 10px 10px; 
-    resize: none;
-    color: rgba(255, 255, 255, 0.6);
-    width: 90%;
-    min-height: 50px;
-    &:focus {
-      outline: none;
-    }
-  }
 }
 
 @media (--screen-xs-min) {

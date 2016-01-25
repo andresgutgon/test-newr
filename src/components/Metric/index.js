@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 import MetricTextarea from '../MetricTextarea';
+import CloseButton from '../CloseButton';
+
 import styles from './styles/index.css';
 
-export default class Metric extends Component {
+class Metric extends Component {
   renderMetas() {
     const { metric: { metadatas=[]} } = this.props;
 
@@ -28,13 +30,14 @@ export default class Metric extends Component {
       <li className={styles.metric}>
         {!editing && this.renderInfo()}
         {editing && <MetricTextarea simple={true}/>}
+        {editing && <CloseButton />}
       </li>
     );
   }
 }
 
 Metric.defaultProps = {
-  editing: false,
+  editing: true,
 };
 
 export default Metric;

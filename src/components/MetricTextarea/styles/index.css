@@ -13,6 +13,7 @@
     color: rgba(255, 255, 255, 0.6);
     width: 90%;
     min-height: 50px;
+    overflow: hidden;
     &:focus {
       outline: none;
     }
@@ -24,4 +25,5 @@
   composes: textareaWrapper;
   background-color: var(--metric-bg-light);
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+  min-height: 82px;
 }
