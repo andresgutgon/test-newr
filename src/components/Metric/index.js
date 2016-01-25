@@ -37,7 +37,7 @@ class Metric extends Component {
 }
 
 Metric.defaultProps = {
-  editing: true,
+  editing: false,
 };
 
 export default Metric;

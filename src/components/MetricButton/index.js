@@ -27,7 +27,7 @@ class MetricButton extends Component {
 }
 
 MetricButton.defaultProps = {
-  editing: true,
+  editing: false,
 };
 
 export default MetricButton;
