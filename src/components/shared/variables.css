@@ -3,6 +3,7 @@
   --app-color-dark: #4B5265;
   --app-color-alt: #FF0090;
   --metric-bg: #61697E;
+  --metric-bg-light: #6E758A;
 }
 
 @custom-media --screen-xs-min (min-width: 480px);
