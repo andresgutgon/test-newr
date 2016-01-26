@@ -7,8 +7,8 @@
 
   --metric-xs-width: 45%;
   --metric-xs-padding: 2%;
-  --metric-normal-width: 30%;
-  --metric-normal-padding: 1%;
+  --metric-normal-width: 28%;
+  --metric-normal-padding: 2%;
 }
 
 @custom-media --screen-xs-min (min-width: 480px);

@@ -42,6 +42,7 @@
 @media (--screen-xs-min) {
   .metric {
     width: var(--metric-normal-width);
-    padding: var(--metric-normal-padding);
+    padding-left: var(--metric-normal-padding);
+    padding-right: var(--metric-normal-padding);
   }
 }

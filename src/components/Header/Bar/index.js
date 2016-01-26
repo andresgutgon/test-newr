@@ -4,17 +4,17 @@ import styles from './styles/index.css';
 
 class Bar extends Component {
   render() {
-    const { editing } = this.props;
+    const { editing, onToggle } = this.props;
     const btnClass = editing ? styles.buttonActive : styles.button;
 
     return (
       <div className={styles.bar}>
-        <button className={btnClass}>
+        <button className={btnClass} onClick={onToggle}>
           {editing && 'Exit edition mode'}
           {!editing && <i className='fa fa-pencil'></i>}
         </button>
         <div className={styles.name}>
-          averyverylargemailhere@compani.com account of User with a very very large text
+          averyverylargemailhere@company.com account of User with a very very large text
         </div>
       </div>
     );
