@@ -1,35 +1,48 @@
 import React, { Component } from 'react';
 
-import MetricTextarea from '../MetricTextarea';
 import CloseButton from '../CloseButton';
+import Title from './Title';
 
 import styles from './styles/index.css';
 
 class Metric extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isHovered: false,
+    };
+
+    this.onMouseOver = this.onMouseOver.bind(this);
+  }
+
   renderMetas() {
     const { metric: { metadatas=[]} } = this.props;
 
     return metadatas.map((meta, index) => (<li key={index}>{meta}</li>));
   }
 
-  renderInfo() {
-    const { metric } = this.props;
+  onMouseOver() {
+    const { isHovered } = this.state;
 
-    return (
-      <div>
-        <h3 className={styles.metricName}>{metric.name}</h3>
-        <ul className={styles.metas}>{this.renderMetas()}</ul>
-      </div>
-    );
+    this.setState({isHovered: !isHovered});
   }
 
   render() {
-    const { editing } = this.props;
+    const { editing, metric, updateMetricName} = this.props;
+    const { isHovered } = this.state;
 
     return (
-      <li className={styles.metric}>
-        {!editing && this.renderInfo()}
-        {editing && <MetricTextarea simple={true}/>}
+      <li
+        className={styles.metric}
+        onMouseEnter={this.onMouseOver}
+        onMouseLeave={this.onMouseOver}
+      >
+        <Title
+          metric={metric}
+          editing={editing}
+          isHovered={isHovered}
+          updateMetricName={updateMetricName}
+        />
         {editing && <CloseButton />}
       </li>
     );

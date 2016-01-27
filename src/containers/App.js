@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Root from 'components/Root';
 import { toggle } from 'reducers/app';
+import { updateMetricName } from 'reducers/metric';
 
 function mapStateToProps(state) {
   return {
@@ -12,8 +13,10 @@ function mapStateToProps(state) {
   }
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators(CounterActions, dispatch)
-// }
-
-export default connect(mapStateToProps, { toggle })(Root);
+export default connect(
+  mapStateToProps,
+  {
+    toggle,
+    updateMetricName,
+  }
+)(Root);
