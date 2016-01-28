@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
+import { ENTER_KEY, ESC_KEY } from 'constants';
 import MetricTextarea from 'components/MetricTextarea';
 
 import styles from './styles/index.css';
-
-const ENTER_KEY = 13;
-const ESC_KEY = 27;
 
 class Title extends Component {
   constructor() {
@@ -84,7 +82,6 @@ class Title extends Component {
 
     return (
       <MetricTextarea
-        simple={true}
         value={name}
         onKeyDown={this.onKeyDownTextarea}
       />

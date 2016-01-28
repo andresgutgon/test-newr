@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TextareaAutoSize from 'react-textarea-autosize';
 
-import CloseButton from '../CloseButton';
 
 import styles from './styles/index.css';
 
@@ -26,24 +25,33 @@ class MetricTextarea extends Component {
   }
   componentDidMount() {
     const { value } = this.props;
-    this.setState({value: `${value} `});
-    const cursorPosition = this.refs.textareaComponent.value.length;
 
-    this.refs.textareaComponent.selectionStart = cursorPosition;
+    if (value) {
+      this.setState({value: `${value} `});
+      const cursorPosition = this.refs.textareaComponent.value.length;
+
+      this.refs.textareaComponent.selectionStart = cursorPosition;
+    }
+
     this.refs.textareaComponent.focus();
   }
 
+  componentWillReceiveProps(newProps) {
+    const { clean } = newProps;
+
+    if (clean) {
+      this.setState({value: ''});
+    }
+  }
   handleChange(event) {
     this.setState({value: event.target.value});
   }
 
   render() {
-    const { simple, showButton = false } = this.props;
     const { value } = this.state;
-    const className = simple ? styles.textareaWrapper : styles.textareaWrapperStyled;
 
     return (
-      <div className={className}>
+        <div className={styles.textareaWrapper}>
         <TextareaAutoSize
           placeholder='Write metric name'
           onKeyDown={this.onKeyDown}
@@ -51,7 +59,6 @@ class MetricTextarea extends Component {
           ref='textareaComponent'
           onChange={this.handleChange}
         />
-        {showButton && <CloseButton />}
       </div>
     );
   }

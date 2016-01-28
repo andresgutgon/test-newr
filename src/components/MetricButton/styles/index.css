@@ -1,10 +1,5 @@
 @import "../../../components/shared/variables.css";
 
-.buttonWrapper {
-  width: calc(var(--metric-xs-width) + calc(var(--metric-xs-padding) * 2));
-  position: relative;
-}
-
 .button {
   background-color: #565E73;
   border: 1px dashed rgba(255, 255, 255, 0.6);
@@ -16,9 +11,16 @@
   font-size: 11px;
   position: absolute;
   top: 0;
-  bottom: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
   &:hover {
     background-color: var(--metric-bg-light);
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
@@ -33,10 +35,4 @@
 .icon {
   margin-right: 10px;
   font-size: 20px;
-}
-
-@media (--screen-xs-min) {
-  .buttonWrapper {
-    width: calc(var(--metric-normal-width) + calc(var(--metric-normal-padding) * 2));
-  }
 }

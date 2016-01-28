@@ -3,6 +3,7 @@
 .metric {
   width: var(--metric-xs-width);
   padding: var(--metric-xs-padding);
+  margin-left: 1%;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: var(--metric-bg);
@@ -10,6 +11,7 @@
   margin-bottom: 10px;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
   position: relative;
+  min-height: 80px;
 
   &:hover {
     background-color: var(--metric-bg-light);

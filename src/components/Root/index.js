@@ -39,7 +39,7 @@ class Root extends Component {
   }
 
   render() {
-    const { editing } = this.props;
+    const { editing, createMetric } = this.props;
 
     return (
       <div className={styles.app}>
@@ -47,7 +47,7 @@ class Root extends Component {
           <Header editing={editing} onToggle={this._handleEditingToggle} />
           <ul className={styles.metrics}>
             {this.renderMetrics()}
-            <MetricButton />
+            <MetricButton createMetric={createMetric}/>
           </ul>
         </div>
       </div>
