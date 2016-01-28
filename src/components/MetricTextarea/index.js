@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextareaAutoSize from 'react-textarea-autosize';
 
 import CloseButton from '../CloseButton';
 
@@ -43,8 +44,7 @@ class MetricTextarea extends Component {
 
     return (
       <div className={className}>
-        <textarea
-          rows={1}
+        <TextareaAutoSize
           placeholder='Write metric name'
           onKeyDown={this.onKeyDown}
           value={value}

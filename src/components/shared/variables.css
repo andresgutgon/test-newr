@@ -9,6 +9,9 @@
   --metric-xs-padding: 2%;
   --metric-normal-width: 28%;
   --metric-normal-padding: 2%;
+
+  --font-size-header: 0.9em;
+  --line-height-header: 1.3;
 }
 
 @custom-media --screen-xs-min (min-width: 480px);
