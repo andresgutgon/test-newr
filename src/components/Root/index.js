@@ -18,7 +18,12 @@ class Root extends Component {
   }
 
   renderMetrics() {
-    const { metrics, editing, updateMetricName } = this.props;
+    const {
+      metrics,
+      editing,
+      updateMetricName,
+      removeMetric,
+    } = this.props;
 
     return metrics.map((metric, index) => {
       return (
@@ -27,6 +32,7 @@ class Root extends Component {
           metric={metric}
           editing={editing}
           updateMetricName={updateMetricName}
+          removeMetric={removeMetric}
         />
       );
     });

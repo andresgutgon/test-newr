@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 import app from './app';
-import metric from './metric';
+import metrics from './metrics';
 
 const rootReducer = combineReducers({
   app,
-  metric,
+  metrics,
 });
 
 export default rootReducer;

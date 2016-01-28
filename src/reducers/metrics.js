@@ -7,11 +7,10 @@ const REMOVE_METRIC = 'REMOVE_METRIC';
 
 const initialMetrics = METRICS.map((metric) => _.extend(metric, {id: _.uniqueId('metric_')}));
 const initialState = {
-  metrics: {
-    entities: initialMetrics,
-    byId: _.indexBy(initialMetrics, 'id'),
-  },
+  entities: initialMetrics,
 };
+
+let entities = [];
 
 export default function metric(state = initialState, action) {
   switch (action.type) {
@@ -19,20 +18,18 @@ export default function metric(state = initialState, action) {
     return state;
 
   case REMOVE_METRIC:
-    return state;
+    entities = state.entities.filter((m) => m.id !== action.id);
+
+    return Object.assign({}, state, { entities });
 
   case UPDATE_METRIC:
-    const { metrics } = state;
-    const metric = metrics.byId[action.data.id];
-
-    if (!metric) return state;
-
-    metric.name = action.data.name || 'no title';
-
-    return Object.assign({}, state, {
-      entities: metrics.entities,
-      byId: _.indexBy(metrics.entities, 'id'),
+    entities = state.entities.map((metric) => {
+      if (metric.id !== action.id) return metric;
+      const name = action.name || 'No title';
+      return Object.assign({}, metric, { name });
     });
+
+    return Object.assign({}, state, { entities });
 
   default:
     return state;
@@ -40,8 +37,9 @@ export default function metric(state = initialState, action) {
 }
 
 export function updateMetricName({ name, id }) {
-  return {
-    type: UPDATE_METRIC,
-    data: {name, id},
-  }
+  return { type: UPDATE_METRIC, id, name };
+};
+
+export function removeMetric(id) {
+  return { type: REMOVE_METRIC, id }
 };

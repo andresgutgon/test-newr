@@ -13,6 +13,7 @@ class Metric extends Component {
     };
 
     this.onMouseOver = this.onMouseOver.bind(this);
+    this.onMetricRemove = this.onMetricRemove.bind(this);
   }
 
   renderMetas() {
@@ -27,8 +28,18 @@ class Metric extends Component {
     this.setState({isHovered: !isHovered});
   }
 
+  onMetricRemove() {
+    const { metric: { id }, removeMetric } = this.props;
+    removeMetric(id);
+  }
+
   render() {
-    const { editing, metric, updateMetricName} = this.props;
+    const {
+      editing,
+      metric,
+      updateMetricName,
+      removeMetric,
+    } = this.props;
     const { isHovered } = this.state;
 
     return (
@@ -43,7 +54,7 @@ class Metric extends Component {
           isHovered={isHovered}
           updateMetricName={updateMetricName}
         />
-        {editing && <CloseButton />}
+        {editing && <CloseButton onClick={this.onMetricRemove} />}
       </li>
     );
   }
