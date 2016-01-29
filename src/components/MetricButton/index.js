@@ -24,7 +24,7 @@ class MetricButton extends Component {
   onKeyDownTextarea(event) {
     const { createMetric } = this.props;
     const code = event.keyCode;
-    const name = event.target.value.replace(/[\n\r]/g, '');
+    const name = event.target.value;
 
     if (code !== ENTER_KEY && code !== ESC_KEY) return;
 
@@ -63,6 +63,7 @@ class MetricButton extends Component {
         <MetricTextarea
           onKeyDown={this.onKeyDownTextarea}
           clean={clean_textarea}
+          value={''}
         />
         <CloseButton onClick={this.onClickClose} />
       </div>

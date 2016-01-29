@@ -1,3 +1,4 @@
+import _ from 'underscore';
 import React, { Component } from 'react';
 import TextareaAutoSize from 'react-textarea-autosize';
 
@@ -43,8 +44,10 @@ class MetricTextarea extends Component {
       this.setState({value: ''});
     }
   }
+
   handleChange(event) {
-    this.setState({value: event.target.value});
+    const value = event.target.value.replace(/[\n\r]/g, '');
+    this.setState({value: value});
   }
 
   render() {
