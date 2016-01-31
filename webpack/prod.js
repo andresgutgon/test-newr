@@ -21,7 +21,7 @@ module.exports = function () {
       }
     }),
 
-    new ExtractTextPlugin('app.css', { allChunks: true }),
+    new ExtractTextPlugin('app.[hash].css', { allChunks: true }),
   ]);
 
   config.plugins = plugins;
