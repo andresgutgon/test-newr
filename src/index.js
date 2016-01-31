@@ -8,9 +8,12 @@ import App from 'containers/App';
 import configureStore from 'store/configureStore';
 const store = configureStore();
 
+const div = document.createElement('div');
+document.body.appendChild(div);
+
 render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  div
 );

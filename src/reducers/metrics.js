@@ -1,5 +1,6 @@
 import _ from 'underscore';
 
+import generateRandomMetadatas from './services/generate-random-metas';
 import { METRICS, METADATAS }  from '../data/boostrap';
 const CREATE_METRIC = 'CREATE_METRIC';
 const UPDATE_METRIC = 'UPDATE_METRIC';
@@ -13,24 +14,13 @@ const initialState = {
 
 let entities = [];
 
-function generateRandomMetadatas() {
-  const used_indexes = [];
-  return _.compact(_.range(_.random(1, METADATAS.length)).map((item) => {
-    const index = _.random(0, METADATAS.length -1);
-    if (_.contains(used_indexes, index)) return;
-
-    used_indexes.push(index);
-    return METADATAS[index];
-  }));
-}
-
 export default function metric(state = initialState, action) {
   switch (action.type) {
     case CREATE_METRIC:
       entities = state.entities.concat([{
         id: generateID(),
         name: action.name,
-        metadatas: generateRandomMetadatas(),
+        metadatas: generateRandomMetadatas(METADATAS),
       }]);
 
       return Object.assign({}, state, { entities });

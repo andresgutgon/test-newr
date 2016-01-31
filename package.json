@@ -7,9 +7,12 @@
     "build:webpack": "NODE_ENV=production node bin/compile",
     "build": "npm run clean && npm run build:webpack",
     "start": "NODE_ENV=development node devServer.js",
-    "clean-source": "rimraf bin README.md .babelrc devServer.js src screenshot.png webpack LICENSE .eslintrc package.json",
+    "clean-source": "rimraf bin README.md .babelrc devServer.js src screenshot.png webpack LICENSE .eslintrc package.json karma.conf.js tests.webpack.js",
     "deploy": "gh-pages-deploy",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "karma start",
+    "test-watch": "karma start --watch",
+    "test-multi": "karma start --single-run=false"
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
@@ -69,7 +72,17 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-middleware": "^1.4.0",
-    "webpack-hot-middleware": "^2.6.0"
+    "webpack-hot-middleware": "^2.6.0",
+    "expect": "^1.13.0",
+    "karma": "^0.13.15",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-cli": "0.1.1",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-mocha": "^0.2.1",
+    "karma-sourcemap-loader": "^0.3.6",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.3.4",
+    "react-addons-test-utils": "^0.14.3"
   },
   "dependencies": {
     "normalize.css": "^3.0.3",
