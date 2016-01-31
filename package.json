@@ -4,8 +4,9 @@
   "description": "Use react to make a small UI metrics component",
   "scripts": {
     "clean": "rimraf dist",
-    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "build": "npm run clean && npm run build:webpack",
+    "build:webpack": "NODE_ENV=production webpack --config webpack/prod.js",
+    "build": "npm run clean && npm run build:webpack && cp index.html dist/index.html && cp src/images/favicon.ico dist/",
+    "build2": "npm run clean",
     "start": "NODE_ENV=development node devServer.js",
     "lint": "eslint src"
   },
@@ -37,7 +38,6 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-react-hmre": "^1.0.0",
-    "cross-env": "^1.0.6",
     "css-loader": "^0.15.1",
     "eslint": "^1.10.3",
     "eslint-plugin-babel": "^3.0.0",

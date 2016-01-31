@@ -1,14 +1,18 @@
 var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
-var config = require('./webpack.config.dev');
+var config = require('./webpack/dev')();
 
 var app = express();
 var compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
+  noInfo: false,
+  publicPath: config.output.publicPath,
+  stats: {
+    chunks: false,
+    colors: true
+  },
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
