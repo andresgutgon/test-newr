@@ -79,6 +79,7 @@ module.exports = function(env) {
     plugins: [
       new HtmlWebpackPlugin({
         favicon: './src/static/favicon.ico',
+        title: 'Widget demo app',
         template: 'src/index.html',
         filename: 'index.html',
       }),
