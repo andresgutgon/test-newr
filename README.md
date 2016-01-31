@@ -18,5 +18,12 @@ open http://localhost:3000
 ```bash
 npm run deploy
 ```
+
+## Run tests
+
+```bash
+npm run test
+```
+
 ## Reference
 This boilerplate project is based on [Gaearon's Boilerplate](https://github.com/gaearon/react-transform-boilerplate)
