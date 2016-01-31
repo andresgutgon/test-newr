@@ -7,7 +7,7 @@
     "build:webpack": "NODE_ENV=production node bin/compile",
     "build": "npm run clean && npm run build:webpack",
     "start": "NODE_ENV=development node devServer.js",
-    "clean-source": "rimraf bin README.md .babelrc devServer.js src screenshot.png node_modules webpac .eslintrc package.json",
+    "clean-source": "rimraf bin README.md .babelrc devServer.js src screenshot.png node_modules webpack LICENSE .eslintrc package.json",
     "deploy": "gh-pages-deploy",
     "lint": "eslint src"
   },
