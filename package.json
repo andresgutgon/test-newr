@@ -7,7 +7,14 @@
     "build:webpack": "NODE_ENV=production node bin/compile",
     "build": "npm run clean && npm run build:webpack",
     "start": "NODE_ENV=development node devServer.js",
+    "clean-source": "rimraf bin README.md .babelrc devServer.js src screenshot.png node_modules webpac .eslintrc package.json",
+    "deploy": "gh-pages-deploy",
     "lint": "eslint src"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "prep": ["build"],
+    "post": ["clean-source"]
   },
   "repository": {
     "type": "git",
@@ -49,6 +56,7 @@
     "file-loader": "^0.8.5",
     "font-awesome": "^4.5.0",
     "font-awesome-webpack": "0.0.4",
+    "gh-pages-deploy": "^0.4.0",
     "html-loader": "0.4.0",
     "html-webpack-plugin": "2.7.2",
     "postcss-cssnext": "2.4.0",
