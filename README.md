@@ -9,9 +9,14 @@ Just me playing with React to develop a small metrics UI component. The objectiv
 git clone https://github.com/andresgutgon/test-newr.git
 cd test-newr
 npm install
-npm start
+npm run start
 open http://localhost:3000
 ```
 
+## Deploy
+
+```bash
+npm run deploy
+```
 ## Reference
 This boilerplate project is based on [Gaearon's Boilerplate](https://github.com/gaearon/react-transform-boilerplate)
