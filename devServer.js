@@ -1,14 +1,18 @@
 var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
+var historyApiFallback = require('connect-history-api-fallback');
 var config = require('./webpack/dev')();
 
 var app = express();
-var compiler = webpack(config);
 
+app.use(historyApiFallback({
+  verbose: false,
+}));
+
+var compiler = webpack(config);
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: false,
-  publicPath: config.output.publicPath,
   stats: {
     chunks: false,
     colors: true
@@ -16,10 +20,6 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
-
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
 
 app.listen(3000, 'localhost', function(err) {
   if (err) {

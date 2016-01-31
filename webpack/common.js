@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /**
  * Based on enviroment put CSS inside webpack bundle
@@ -36,22 +37,22 @@ module.exports = function(env) {
     },
 
     output: {
-      path: path.join(__dirname, '../dist/static'),
+      path: path.join(__dirname, '../dist'),
       filename: 'bundle.js',
-      publicPath: '/static/'
+      publicPath: ''
     },
 
     module: {
       loaders: [
         {
           test: /\.jsx?/,
-          loaders: ['babel'],
+          loader: 'babel',
           exclude: /node_moduless/,
           include: path.join(__dirname, '../src')
         },
         {
           test: /\.css$/,
-          loader: getCSSLoader(env),
+          loader: getCSSLoader(env)
         },
         {
           test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -61,6 +62,10 @@ module.exports = function(env) {
           test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
           loader: "file-loader"
         },
+        {
+          test: /\.html$/,
+          loader: 'html-loader'
+        }
       ],
     },
 
@@ -69,6 +74,14 @@ module.exports = function(env) {
       require('postcss-cssnext')(),
       require('postcss-nested'),
       require('autoprefixer-core'),
+    ],
+
+    plugins: [
+      new HtmlWebpackPlugin({
+        favicon: './src/static/favicon.ico',
+        template: 'src/index.html',
+        filename: 'index.html',
+      }),
     ]
   };
 };

@@ -4,23 +4,27 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = require('./common')('production');
 
-config.plugins = [
-  new webpack.optimize.OccurenceOrderPlugin(),
-  new webpack.DefinePlugin({
-    'process.env': {
-      'NODE_ENV': JSON.stringify('production')
-    }
-  }),
 
-  new webpack.optimize.UglifyJsPlugin({
-    compressor: {
-      warnings: false
-    }
-  }),
+module.exports = function () {
 
-  new ExtractTextPlugin('app.css', { allChunks: true }),
-];
+  var plugins = config.plugins.concat([
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
 
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
+    }),
 
-module.exports = config;
+    new ExtractTextPlugin('app.css', { allChunks: true }),
+  ]);
+
+  config.plugins = plugins;
+  return config;
+}
 
